@@ -17,8 +17,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm py-3">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{-- <span class="fw-bold">{{ config('app.name', '{KerjaTech;}') }}</span> --}}
-                    <img src="{{url('/logo-kerjatech.webp')}}" width="150px" alt="KerjaTech logo">
+                    <span class="badge text-bg-dark fs-5 fw-normal">{{ config('app.name', '{KerjaTech;}') }}</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

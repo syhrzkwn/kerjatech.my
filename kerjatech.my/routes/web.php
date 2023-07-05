@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/freelance', function () {
-    return view('freelance');
+Route::get('/freelancer', function () {
+    return view('freelancer');
 });
 
 // User Route
