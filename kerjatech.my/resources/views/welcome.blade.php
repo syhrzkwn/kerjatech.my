@@ -6,27 +6,33 @@
         <h1>Find <span class="text-decoration-underline">KerjaTech</span> in Malaysia 🇲🇾</h1>
         <p class="text-secondary">Description</p>
     </div>
-    <p class="fw-bold fs-5 mb-1">1 positions available ✅</p>
-    <p class="text-secondary">⌛ Last updated on 1 July 2023</p>
-    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+
+    <p class="fw-bold fs-5 mb-1">{{count($jobs)}} positions available ✅</p>
+    <p class="text-secondary">⌛ Last updated on {{date('d F Y')}}</p>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+        @foreach($jobs as $job)
         <div class="col">
-            <div class="card text-bg-light h-100">
+            <div class="card bg-white h-100">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
-                        <p class="card-text mb-2">HeiTech Padu Berhad</p>
-                        <span class="badge text-bg-success">NEW</span>
+                        <p class="card-text mb-2">{{$job->company}}</p>
+                        @if (date('Y-m-d', strtotime($job->created_at)) == date('Y-m-d'))
+                            <span class="badge text-bg-success">NEW</span>
+                        @endif
                     </div>
-                    <h5 class="card-title">Software Engineer</h5>
+                    <h5 class="card-title">{{$job->title}}</h5>
                     <p class="card-text mt-3">
-                        <span>📍 Kuala Lumpur</span><br>
-                        <span>👨🏻‍💻 Full time | In-office</span><br>
-                        <span>💵 ~RM4,000</span>
+                        <span>📍 {{$job->location}}</span><br>
+                        <span>👨🏻‍💻 {{$job->employment_type}} | {{$job->mode}}</span><br>
+                        <span>💵 ~RM{{$job->salary}}</span>
                     </p>
-                    <small class="text-secondary">Posted on 1 July 2023</small>
-                    <a href="#" class="btn btn-outline-dark mt-3 w-100">✨ Details</a>
+                    <small class="text-secondary">Posted on {{date('d F Y', strtotime($job->created_at))}}</small>
+                    <a href="{{route('job.details', $job->id)}}" class="btn btn-outline-dark mt-3 w-100">✨ Details</a>
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
 </div>
 @endsection
