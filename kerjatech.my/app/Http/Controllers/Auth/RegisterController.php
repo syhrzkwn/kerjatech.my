@@ -106,6 +106,6 @@ class RegisterController extends Controller
 
         Auth::guard('employer')->login($employer);
 
-        return redirect()->route('employer.profile');
+        return redirect()->route('employer.dashboard');
     }
 }

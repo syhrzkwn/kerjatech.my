@@ -16,7 +16,7 @@
     <div id="app" class="d-flex flex-column h-100">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm py-3">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ route('employer.dashboard') }}">
                     <span class="badge text-bg-dark fs-5 fw-normal">{{ config('app.name', '{KerjaTech;}') }}</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -37,7 +37,7 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a href="{{route('employer.profile')}}" class="dropdown-item">Profile</a>
+                                <a href="{{route('employer.edit', Auth::guard('employer')->user()->id)}}" class="dropdown-item">Profile</a>
                                 <a class="dropdown-item text-danger" href="{{ route('employer.logout') }}"
                                     onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Employer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,7 +20,9 @@ class EmployerController extends Controller
      */
     public function index()
     {
-        return view('employer.profile');
+        $id = Auth::guard('employer')->user()->id;
+        $jobs = DB::table('jobs')->where('employer_id', $id)->orderBy('created_at', 'desc')->get();
+        return view('employer.dashboard', compact('jobs'));
     }
 
     /**
@@ -40,6 +43,7 @@ class EmployerController extends Controller
         $request->validate([
             'fname' => 'required|string|max:255',
             'lname' => 'required|string|max:255',
+            'company' => 'required|string',
             'phone' => 'required|string',
         ]);
 
@@ -47,6 +51,7 @@ class EmployerController extends Controller
             $employer->update([
                 'fname' => $request->fname,
                 'lname' => $request->lname,
+                'company' => $request->company,
                 'phone' => $request->phone,
             ]);
 

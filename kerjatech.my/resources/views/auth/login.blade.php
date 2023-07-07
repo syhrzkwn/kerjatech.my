@@ -11,7 +11,7 @@
 
                     <div class="row g-2 mb-4">
                         <div class="col">
-                            <a class="btn btn-dark w-100" href="{{route('login')}}">👨🏻‍💻 User</a>
+                            <a class="btn btn-dark w-100" href="{{route('login')}}">👨🏻‍💻 Freelancer</a>
                         </div>
                         <div class="col">
                             <a class="btn btn-outline-dark w-100" href="{{route('employer.login')}}">🕵🏻‍♀️ Employer</a>
@@ -46,7 +46,7 @@
                     </div>
                     <button class="w-100 btn btn-lg btn-dark" type="submit">Login</button>
                 </form>
-                <p class="mt-4 mb-0">Don't have an account? <a href="{{ route('register') }}">Register</a> now!</p>
+                <p class="mt-4 mb-0">Don't have an account? <a href="{{ route('register') }}" class="link-dark">Register</a> now!</p>
             </div>
         </div>
     </div>

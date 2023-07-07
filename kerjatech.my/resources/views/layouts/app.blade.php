@@ -34,17 +34,17 @@
                         <!-- Authentication Links -->
                         @guest
                         <li class="nav-item">
-                            <a class="btn btn-light me-2" href="{{url('freelancer')}}">🚀 Freelancer</a>
+                            <a class="btn btn-light my-1 me-2" href="{{url('freelancer')}}">🚀 Freelancer</a>
                         </li>
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="btn btn-light me-2" href="{{ route('login') }}">⛅ {{ __('Login') }}</a>
+                                    <a class="btn btn-light my-1 me-2" href="{{ route('login') }}">⛅ {{ __('Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="btn btn-outline-dark" href="{{ route('register') }}">⚡ {{ __('Register') }}</a>
+                                    <a class="btn btn-outline-dark my-1" href="{{ route('register') }}">⚡ {{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -54,7 +54,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a href="{{route('profile')}}" class="dropdown-item">Profile</a>
+                                    <a href="{{route('profile.edit', Auth::user()->id)}}" class="dropdown-item">Profile</a>
                                     <a class="dropdown-item text-danger" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

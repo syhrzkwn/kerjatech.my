@@ -6,9 +6,8 @@
         <div class="col-lg-6">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{route('employer.profile')}}" class="link-dark">Employer</a></li>
-                    <li class="breadcrumb-item"><a href="{{route('employer.profile')}}" class="link-dark">Profile</a></li>
-                    <li class="breadcrumb-item">{{$employer->id}}</li>
+                    <li class="breadcrumb-item"><a href="{{route('employer.dashboard')}}" class="link-dark">Dashboard</a></li>
+                    <li class="breadcrumb-item">{{$employer->fname}} {{$employer->lname}}</li>
                     <li class="breadcrumb-item active" aria-current="page">Edit</li>
                 </ol>
             </nav>
@@ -20,10 +19,11 @@
             </div>
             @endif
 
-            <div class="card mb-3">
+            <div class="card bg-white mb-3">
                 <div class="card-body">
                     <form action="{{route('employer.profile.update', $employer->id)}}" method="post">
                         @csrf
+                        @method('patch')
                         <div class="row row-cols-md-2 g-2">
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">First Name</label>
@@ -53,14 +53,24 @@
                                 </span>
                             @enderror
                         </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput8" class="form-label">Company</label>
+                            <input type="text" name="company" value="{{ (old('company')) ? old('company') : $employer->company }}" class="form-control @error('company') is-invalid @enderror" id="exampleFormControlInput8">
+                            @error('company')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
                         <button type="submit" class="btn btn-dark">Edit Profile</button>
                     </form>
                 </div>
             </div>
-            <div class="card mb-3">
+            <div class="card bg-white mb-3">
                 <div class="card-body">
                     <form action="{{route('employer.email.update', $employer->id)}}" method="post">
                         @csrf
+                        @method('put')
                         <div class="mb-3">
                             <label for="exampleFormControlInput4" class="form-label">Email</label>
                             <input type="email" name="email" value="{{ (old('email')) ? old('email') : $employer->email }}" class="form-control @error('email') is-invalid @enderror" id="exampleFormControlInput4">
@@ -74,10 +84,11 @@
                     </form>
                 </div>
             </div>
-            <div class="card mb-3">
+            <div class="card bg-white mb-3">
                 <div class="card-body">
                     <form action="{{route('employer.password.update', $employer->id)}}" method="post">
                         @csrf
+                        @method('put')
                         <div class="mb-3">
                             <label for="exampleFormControlInput5" class="form-label">Password</label>
                             <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="exampleFormControlInput5">
@@ -95,10 +106,11 @@
                     </form>
                 </div>
             </div>
-            <div class="card">
+            <div class="card bg-white">
                 <div class="card-body">
                     <form action="{{route('delete.employer', $employer->id)}}" method="post">
                         @csrf
+                        @method('delete')
                         <div class="mb-3">
                             <label for="exampleFormControlInput7" class="form-label fw-bold">Danger Zone</label>
                             <p>This action cannot be undone. This will permanently delete your account. Please type <strong>{{$employer->email}}</strong> to confirm.</p>

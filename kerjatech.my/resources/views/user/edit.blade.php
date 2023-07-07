@@ -6,8 +6,8 @@
         <div class="col-lg-6">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{route('profile')}}" class="link-dark">Profile</a></li>
-                    <li class="breadcrumb-item">{{$user->id}}</li>
+                    <li class="breadcrumb-item"><a href="{{route('dashboard')}}" class="link-dark">Dashboard</a></li>
+                    <li class="breadcrumb-item">{{$user->fname}} {{$user->lname}}</li>
                     <li class="breadcrumb-item active" aria-current="page">Edit</li>
                 </ol>
             </nav>
@@ -23,6 +23,7 @@
                 <div class="card-body">
                     <form action="{{route('profile.update', $user->id)}}" method="post">
                         @csrf
+                        @method('patch')
                         <div class="row row-cols-md-2 g-2">
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">First Name</label>
@@ -60,6 +61,7 @@
                 <div class="card-body">
                     <form action="{{route('email.update', $user->id)}}" method="post">
                         @csrf
+                        @method('put')
                         <div class="mb-3">
                             <label for="exampleFormControlInput4" class="form-label">Email</label>
                             <input type="email" name="email" value="{{ (old('email')) ? old('email') : $user->email }}" class="form-control @error('email') is-invalid @enderror" id="exampleFormControlInput4">
@@ -77,6 +79,7 @@
                 <div class="card-body">
                     <form action="{{route('password.update', $user->id)}}" method="post">
                         @csrf
+                        @method('put')
                         <div class="mb-3">
                             <label for="exampleFormControlInput5" class="form-label">Password</label>
                             <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="exampleFormControlInput5">
@@ -98,6 +101,7 @@
                 <div class="card-body">
                     <form action="{{route('delete.user', $user->id)}}" method="post">
                         @csrf
+                        @method('delete')
                         <div class="mb-3">
                             <label for="exampleFormControlInput7" class="form-label fw-bold">Danger Zone</label>
                             <p>This action cannot be undone. This will permanently delete your account. Please type <strong>{{$user->email}}</strong> to confirm.</p>

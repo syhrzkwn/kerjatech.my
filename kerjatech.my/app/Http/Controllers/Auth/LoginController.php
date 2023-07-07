@@ -54,7 +54,7 @@ class LoginController extends Controller
         ]);
 
         if (Auth::guard('employer')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect()->intended('employer/profile');
+            return redirect()->intended('employer/dashboard');
         }
         else {
             return redirect()->back()->with('error', 'These credentials do not match our records.');
