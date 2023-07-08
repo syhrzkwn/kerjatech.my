@@ -3,7 +3,6 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        @foreach($jobs as $job)
         <div class="col-lg-6">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -43,7 +42,6 @@
                 </div>
             </div>
         </div>
-        @endforeach
     </div>
 </div>
 @endsection

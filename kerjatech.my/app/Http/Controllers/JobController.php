@@ -13,14 +13,6 @@ class JobController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
      * Show the form for creating a new resource.
      */
     public function create()
@@ -124,7 +116,7 @@ class JobController extends Controller
                 'employer_id' => $request->employer_id,
             ]);
 
-            return redirect()->back()->with('success', 'Job updated successfully.');
+            return redirect()->back()->with('success', 'Job post updated successfully.');
 
         } catch(\Exception $e) {
             return redirect()->back()->with('error', 'Something went wrong. ' .$e->getMessage());

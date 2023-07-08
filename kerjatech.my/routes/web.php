@@ -16,9 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome');
 Route::get('/jobs/{id}', [App\Http\Controllers\WelcomeController::class, 'show'])->name('job.details');
 
-Route::get('/freelancer', function () {
-    return view('freelancer');
-});
+Route::get('/freelancer', [App\Http\Controllers\FreelanceController::class, 'index'])->name('freelancer');
+Route::get('/freelancer/{id}', [App\Http\Controllers\FreelanceController::class, 'showOutside'])->name('freelancer.details');
 
 // User Route
 Auth::routes();
@@ -31,16 +30,23 @@ Route::put('/profile/{id}/email-update', [App\Http\Controllers\UserController::c
 Route::put('/profile/{id}/password-update', [App\Http\Controllers\UserController::class, 'passwordUpdate'])->name('password.update');
 Route::delete('/profile/{id}/delete-user', [App\Http\Controllers\UserController::class, 'deleteUser'])->name('delete.user');
 
-// Employer Route
-Route::get('employer/login', [App\Http\Controllers\Auth\LoginController::class, 'showEmployerLoginForm'])->name('employer.login');
-Route::post('employer/login', [App\Http\Controllers\Auth\LoginController::class, 'employerLogin'])->name('employer.login.submit');
+Route::get('/freelance/create', [App\Http\Controllers\FreelanceController::class, 'create'])->name('freelance.create');
+Route::post('/freelance/store', [App\Http\Controllers\FreelanceController::class, 'store'])->name('freelance.store');
+Route::get('/freelance/{id}', [App\Http\Controllers\FreelanceController::class, 'show'])->name('freelance.show');
+Route::get('/freelance/{id}/edit', [App\Http\Controllers\FreelanceController::class, 'edit'])->name('freelance.edit');
+Route::patch('/freelance/{id}/update', [App\Http\Controllers\FreelanceController::class, 'update'])->name('freelance.update');
+Route::delete('/freelance/{id}/delete', [App\Http\Controllers\FreelanceController::class, 'destroy'])->name('freelance.delete');
 
-Route::get('employer/register', [App\Http\Controllers\Auth\RegisterController::class, 'showEmployerRegisterForm'])->name('employer.register');
-Route::post('employer/register', [App\Http\Controllers\Auth\RegisterController::class, 'createEmployer'])->name('employer.register.submit');
+// Employer Route
+Route::get('/employer/login', [App\Http\Controllers\Auth\LoginController::class, 'showEmployerLoginForm'])->name('employer.login');
+Route::post('/employer/login', [App\Http\Controllers\Auth\LoginController::class, 'employerLogin'])->name('employer.login.submit');
+
+Route::get('/employer/register', [App\Http\Controllers\Auth\RegisterController::class, 'showEmployerRegisterForm'])->name('employer.register');
+Route::post('/employer/register', [App\Http\Controllers\Auth\RegisterController::class, 'createEmployer'])->name('employer.register.submit');
 
 // Route::group(['middleware' => ['employer']], function() {});
-Route::post('employer/logout',[App\Http\Controllers\Auth\LoginController::class,'employerLogout'])->name('employer.logout');
-Route::get('employer/dashboard', [App\Http\Controllers\EmployerController::class, 'index'])->name('employer.dashboard');
+Route::post('/employer/logout',[App\Http\Controllers\Auth\LoginController::class,'employerLogout'])->name('employer.logout');
+Route::get('/employer/dashboard', [App\Http\Controllers\EmployerController::class, 'index'])->name('employer.dashboard');
 
 Route::get('/employer/profile/{id}/edit', [App\Http\Controllers\EmployerController::class, 'edit'])->name('employer.edit');
 Route::patch('/employer/profile/{id}/profile-update', [App\Http\Controllers\EmployerController::class, 'profileUpdate'])->name('employer.profile.update');

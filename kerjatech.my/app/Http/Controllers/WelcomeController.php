@@ -18,9 +18,7 @@ class WelcomeController extends Controller
 
     public function show(string $id)
     {
-        $jobs = DB::table('jobs')
-        ->where('jobs.id', $id)
-        ->get();
-        return view('jobDetails', compact('jobs'));
+        $job = Job::findOrFail($id);
+        return view('jobDetails', compact('job'));
     }
 }

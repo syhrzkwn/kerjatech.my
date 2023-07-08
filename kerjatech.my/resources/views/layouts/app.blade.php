@@ -16,7 +16,7 @@
     <div id="app" class="d-flex flex-column h-100">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm py-3">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ route('welcome') }}">
                     <span class="badge text-bg-dark fs-5 fw-normal">{{ config('app.name', '{KerjaTech;}') }}</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -34,7 +34,7 @@
                         <!-- Authentication Links -->
                         @guest
                         <li class="nav-item">
-                            <a class="btn btn-light my-1 me-2" href="{{url('freelancer')}}">🚀 Freelancer</a>
+                            <a class="btn btn-light my-1 me-2" href="{{route('freelancer')}}">🚀 Freelancer</a>
                         </li>
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -48,6 +48,12 @@
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item">
+                                <a class="btn btn-light my-1 me-2" href="{{route('freelancer')}}">🚀 Freelancer</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn btn-light my-1 me-2" href="{{ route('dashboard') }}">🖥️ Dashbaord</a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->fname }} {{ Auth::user()->lname }}
