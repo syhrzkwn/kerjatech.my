@@ -4,10 +4,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-6">
-            <div class="card p-5 my-5 bg-white">
+            <div class="card p-3 p-md-5 my-5 bg-white">
                 <form method="POST" action="{{ route('employer.login.submit') }}">
                     @csrf
-                    <h1 class="h3 mb-3 fw-bold">Login</h1>
+                    <h1 class="mb-3 fw-bold">Login</h1>
 
                     <div class="row g-2 mb-4">
                         <div class="col">

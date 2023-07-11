@@ -36,6 +36,9 @@
                         <li class="nav-item">
                             <a class="btn btn-light my-1 me-2" href="{{route('freelancer')}}">🚀 Freelancer</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="btn btn-light my-1 me-2" href="{{route('employer.register')}}">📢 Post Jobs</a>
+                        </li>
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="btn btn-light my-1 me-2" href="{{ route('login') }}">⛅ {{ __('Login') }}</a>
@@ -85,7 +88,7 @@
         <footer class="mt-auto py-4 w-100 bg-dark">
             <div class="container text-light d-flex justify-content-between">
                 <span>&copy; {{date('Y')}} kerjatech.my (syhrzkwn.dev)</span>
-                <span><a href="https://github.com/syhrzkwn/kerjatech.my" target="_blank" class="link-light">Source code<i class=" ms-2 bi bi-github"></i></a></span>
+                <span><a href="https://github.com/syhrzkwn/kerjatech.my" target="_blank" class="link-light">Open-Source<i class=" ms-2 bi bi-github"></i></a></span>
             </div>
         </footer>
     </div>
