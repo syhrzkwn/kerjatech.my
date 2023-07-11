@@ -7,7 +7,7 @@
             <div class="card bg-white h-100">
                 <div class="card-body">
                     <h1>Hi, Welcome {{Auth::user()->fname}} {{Auth::user()->lname}}!</h1>
-                    <span class="badge text-bg-primary mt-2">Freelancer</span>
+                    <span class="badge text-bg-primary mt-3">Freelancer</span>
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
             <div class="card bg-white h-100">
                 <div class="card-body">
                     <h5 class="card-title">🚀 Jom Freelance</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">Be your own boss, keep your hours flexible, and earn a living your own way. Start advertising yourself now at KerjaTech!</p>
                     <a href="{{route('freelance.create')}}" class="btn btn-outline-dark">🏃🏻‍♂️ Let's go!</a>
                 </div>
             </div>

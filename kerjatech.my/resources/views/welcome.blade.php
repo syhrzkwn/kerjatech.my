@@ -4,13 +4,15 @@
 <div class="container">
     <div class="mt-4 mb-5 text-center">
         <h1>Find <span class="text-decoration-underline">KerjaTech</span> in Malaysia 🇲🇾</h1>
-        <p class="text-secondary">Description</p>
+        <p class="text-secondary">
+            Find available vacancies specifically for IT tech jobs across Malaysia.
+        </p>
     </div>
 
     <p class="fw-bold fs-5 mb-1">{{count($jobs)}} positions available ✅</p>
     <p class="text-secondary">⌛ Last updated on {{date('d F Y')}}</p>
 
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mb-4">
         @foreach($jobs as $job)
         <div class="col">
             <div class="card bg-white h-100">

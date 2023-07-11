@@ -27,7 +27,7 @@
             <div class="card bg-white h-100">
                 <div class="card-body">
                     <h5 class="card-title">📢 Post Jobs</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">Have positions open in your company? Start posting open vacancies now at KerjaTech to find skillful developers in Malaysia!</p>
                     <a href="{{route('job.create')}}" class="btn btn-outline-dark">📌 Start posting a job</a>
                 </div>
             </div>
