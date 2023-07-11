@@ -10,14 +10,14 @@
         <p class="text-secondary mb-2">Are you a developer?</p>
         <a href="{{route('register')}}" class="btn btn-dark">🚀 Start your freelance today</a>
     </div>
-    <div class="row row-cols-1 row-cols-md-2 g-3">
+    <div class="row row-cols-1 row-cols-md-2 g-3 mb-4">
         @foreach($freelances as $freelance)
         <div class="col">
             <a href="{{route('freelancer.details', $freelance->id)}}" class="text-decoration-none">
                 <div class="card bg-white p-2 h-100">
                     <div class="card-body">
                         <div class="card-text">
-                            @if (date('Y-m-d', strtotime($freelance->updated_at)) >= date('Y-m-d', strtotime($freelance->created_at)) && date('Y-m-d', strtotime($freelance->updated_at)) <= date('Y-m-d', strtotime($freelance->updated_at. ' + 7 days')))
+                            @if (date('Y-m-d') <= date('Y-m-d', strtotime($freelance->created_at. ' + 7 days')))
                                 <span class="badge text-bg-success mb-3">Actively looking</span>
                             @endif
                             <h6 class="fw-bold">{{$freelance->title}}</h6>
