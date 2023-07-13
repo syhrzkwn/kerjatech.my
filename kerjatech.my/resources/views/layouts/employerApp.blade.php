@@ -64,7 +64,7 @@
         <footer class="mt-auto py-4 w-100 bg-dark">
             <div class="container text-light d-flex justify-content-between">
                 <span>&copy; {{date('Y')}} kerjatech.my (syhrzkwn.dev)</span>
-                <span><a href="https://github.com/syhrzkwn/kerjatech.my" target="_blank" class="link-light">Open-Source<i class=" ms-2 bi bi-github"></i></a></span>
+                <span><a href="https://github.com/syhrzkwn/kerjatech.my" target="_blank" class="link-light">Source Code<i class=" ms-2 bi bi-github"></i></a></span>
             </div>
         </footer>
     </div>
