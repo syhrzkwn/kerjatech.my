@@ -86,7 +86,7 @@
                         <span>{{$freelance->profile}}</span>
                     </p>
                     <small class="text-secondary">Last updated {{date('d F Y', strtotime($freelance->updated_at))}}</small>
-                    @if (date('Y-m-d', strtotime($freelance->updated_at)) >= date('Y-m-d', strtotime($freelance->created_at)) && date('Y-m-d', strtotime($freelance->updated_at)) <= date('Y-m-d', strtotime($freelance->updated_at. ' + 7 days')))
+                    @if (date('Y-m-d') <= date('Y-m-d', strtotime($freelance->created_at. ' + 7 days')))
                         <span class="badge text-bg-success ms-1">Actively looking</span>
                     @endif
                 </div>

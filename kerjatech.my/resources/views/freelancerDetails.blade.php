@@ -14,10 +14,10 @@
 
             <div class="card p-3 mt-4 bg-white">
                 <div class="card-body">
-                    @if (date('Y-m-d', strtotime($freelance->updated_at)) >= date('Y-m-d', strtotime($freelance->created_at)) && date('Y-m-d', strtotime($freelance->updated_at)) <= date('Y-m-d', strtotime($freelance->updated_at. ' + 7 days')))
-                    <div class="mb-3">
-                        <span class="badge text-bg-success">Actively looking</span>
-                    </div>
+                    @if (date('Y-m-d') <= date('Y-m-d', strtotime($freelance->created_at. ' + 7 days')))
+                        <div class="mb-3">
+                            <span class="badge text-bg-success">Actively looking</span>
+                        </div>
                     @endif
                     <h5 class="card-title">{{$freelance->title}}</h5>
                     <p class="card-text mt-1">
