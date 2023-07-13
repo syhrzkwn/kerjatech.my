@@ -69,7 +69,7 @@ class EmployerController extends Controller
     {
         $employer = Employer::findOrFail($id);
         $request->validate([
-            'email'   => 'required|email|max:255|unique:employers',
+            'email'   => 'required|email:rfc,dns|max:255|unique:employers',
         ]);
 
         try {

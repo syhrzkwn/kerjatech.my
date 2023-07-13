@@ -91,7 +91,7 @@ class RegisterController extends Controller
             'lname' => 'required|string|max:255',
             'company' => 'required|string|max:255',
             'phone' => 'required|string',
-            'email'   => 'required|email|max:255|unique:employers',
+            'email'   => 'required|email:rfc,dns|max:255|unique:employers',
             'password' => 'required|string|min:8|confirmed',
         ]);
 

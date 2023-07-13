@@ -74,7 +74,7 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $request->validate([
-            'email'   => 'required|email|max:255|unique:users',
+            'email'   => 'required|email:rfc,dns|max:255|unique:users',
         ]);
 
         try {
@@ -124,7 +124,7 @@ class UserController extends Controller
         if($user->email == $request['delete_email'])
         {
             $user->delete();
-            Auth::user()->logout();
+            Auth::guard()->logout();
             $request->session()->invalidate();
             return redirect()->route('login');
         }
