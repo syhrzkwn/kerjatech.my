@@ -55,7 +55,7 @@
                                 <a class="btn btn-light my-1 me-2" href="{{route('freelancer')}}">🚀 Freelancer</a>
                             </li>
                             <li class="nav-item">
-                                <a class="btn btn-light my-1 me-2" href="{{ route('dashboard') }}">🖥️ Dashbaord</a>
+                                <a class="btn btn-light my-1 me-2" href="{{ route('dashboard') }}">🖥️ Dashboard</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

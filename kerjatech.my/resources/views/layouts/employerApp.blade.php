@@ -32,7 +32,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="btn btn-light my-1 me-2" href="{{ route('employer.dashboard') }}">🖥️ Dashbaord</a>
+                            <a class="btn btn-light my-1 me-2" href="{{ route('employer.dashboard') }}">🖥️ Dashboard</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
