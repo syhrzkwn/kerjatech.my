@@ -19,7 +19,7 @@
             </div>
             @endif
 
-            <div class="card mb-3">
+            <div class="card bg-white mb-3">
                 <div class="card-body">
                     <form action="{{route('profile.update', $user->id)}}" method="post">
                         @csrf
@@ -57,7 +57,7 @@
                     </form>
                 </div>
             </div>
-            <div class="card mb-3">
+            <div class="card bg-white mb-3">
                 <div class="card-body">
                     <form action="{{route('email.update', $user->id)}}" method="post">
                         @csrf
@@ -75,7 +75,7 @@
                     </form>
                 </div>
             </div>
-            <div class="card mb-3">
+            <div class="card bg-white mb-3">
                 <div class="card-body">
                     <form action="{{route('password.update', $user->id)}}" method="post">
                         @csrf
@@ -97,7 +97,7 @@
                     </form>
                 </div>
             </div>
-            <div class="card">
+            <div class="card bg-white">
                 <div class="card-body">
                     <form action="{{route('delete.user', $user->id)}}" method="post">
                         @csrf
