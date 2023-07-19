@@ -57,7 +57,7 @@ class RegisterController extends Controller
             'fname' => ['required', 'string', 'max:255'],
             'lname' => ['required', 'string', 'max:255'],
             'phone' => ['required', 'string'],
-            'email' => ['required', 'string', 'email:rfc,dns', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email:strict', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -91,7 +91,7 @@ class RegisterController extends Controller
             'lname' => 'required|string|max:255',
             'company' => 'required|string|max:255',
             'phone' => 'required|string',
-            'email'   => 'required|email:rfc,dns|max:255|unique:employers',
+            'email'   => 'required|email:strict|max:255|unique:employers',
             'password' => 'required|string|min:8|confirmed',
         ]);
 

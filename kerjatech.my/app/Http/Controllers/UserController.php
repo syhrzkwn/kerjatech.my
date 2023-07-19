@@ -74,7 +74,7 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $request->validate([
-            'email'   => 'required|email:rfc,dns|max:255|unique:users',
+            'email'   => 'required|email:strict|max:255|unique:users',
         ]);
 
         try {

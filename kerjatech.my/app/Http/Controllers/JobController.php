@@ -36,7 +36,7 @@ class JobController extends Controller
             'experience' => 'required|string',
             'location' => 'required|string',
             'url' => 'required|url',
-            'email' => 'required|email:rfc',
+            'email' => 'required|email:strict',
         ]);
 
         try {
@@ -97,7 +97,7 @@ class JobController extends Controller
             'experience' => 'required|string',
             'location' => 'required|string',
             'url' => 'required|url',
-            'email' => 'required|string',
+            'email' => 'required|email:strict',
         ]);
 
         try {
